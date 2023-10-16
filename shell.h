@@ -8,7 +8,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-
+#include <fcntl.h> 
 /**
  *struct list_s - singly linked list
  *@str: string - (malloc'ed string)
@@ -38,6 +38,7 @@ typedef struct built_in_command
 char *command;
 void (*func)(void);
 } built_in_command;
+void intractive_mode(void);
 int _strlen(char *str);
 int _strcmp(char *str, char *s);
 void (*exec_built_in(char *str))(void);
@@ -49,4 +50,5 @@ void free_array(char **array, size_t size);
 size_t list_len(const list_t *h);
 list_t *add_node_end(list_t **head, const char *str);
 list_t *get_command(char *lineptr,list_t *head,ssize_t *flag);
+void non_intractive_mode(const char *filename);
 #endif
