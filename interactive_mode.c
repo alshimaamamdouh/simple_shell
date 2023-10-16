@@ -28,7 +28,20 @@ if (_strcmp(argv[0], "exit"))
 free_list(head);
 free_array(argv, argc);
 free(lineptr);
-exit(0); }
+exit(0); 
+}
+else if(_strcmp(argv[0], "env"))
+{
+char * env_info;
+int env_offset;
+extern char **environ;
+env_info = _getenv("SHLVL", environ, &env_offset);
+write(1, "SHLVL:", _strlen("SHLVL:"));
+write(1, env_info, _strlen(env_info));
+write(1, "\n", _strlen("\n"));
+}
+else
+{
 // child process
 child_pid = fork();
 if (child_pid == -1)
@@ -45,6 +58,9 @@ else
 wait(&status);
 //free memory
 free_list(head);
-free_array(argv, argc); } }
+free_array(argv, argc); 
+}
+}
+}
 write(1, "exit\n", _strlen("exit\n"));
 }
