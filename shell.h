@@ -41,6 +41,7 @@ void (*func)(void);
 void intractive_mode(void);
 int _strlen(char *str);
 int _strcmp(char *str, char *s);
+char *_strdup(char *c);
 void (*exec_built_in(char *str))(void);
 int is_built_in_command(char *str);
 void print_prompt(void);
@@ -51,4 +52,5 @@ size_t list_len(const list_t *h);
 list_t *add_node_end(list_t **head, const char *str);
 list_t *get_command(char *lineptr,list_t *head,ssize_t *flag);
 void non_intractive_mode(const char *filename);
+char *_getenv(const char *name, char **environ, int *offset);
 #endif

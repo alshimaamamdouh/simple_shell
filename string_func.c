@@ -43,12 +43,12 @@ int c_size;
 static char *dup;
 char *temp;
 if (c == NULL)
-return((char *)NULL);
+return(NULL);
 
 c_size = _strlen(c);
 dup = (char *)malloc(sizeof(char)*c_size+1);
 if (dup == NULL)
-return((char *)NULL);
+return(NULL);
 
 temp= dup;
 while (*c)
