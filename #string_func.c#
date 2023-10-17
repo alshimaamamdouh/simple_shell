@@ -60,7 +60,7 @@ if (c == NULL)
 return (NULL);
 
 c_size = _strlen(c);
-dup = (char *)malloc(sizeof(char)*c_size + 1);
+dup = (char *)malloc((c_size + 1) * sizeof(char *));
 if (dup == NULL)
 return (NULL);
 

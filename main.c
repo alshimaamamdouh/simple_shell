@@ -1,5 +1,12 @@
 #include "shell.h"
-/***/
+/**
+ *main - main start from here
+ *
+ *@ac: integer type
+ *@av: array of char
+ *
+ *Return: return 0
+*/
 int main(int ac, char **av)
 {
 if (ac == 2)

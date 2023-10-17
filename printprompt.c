@@ -1,4 +1,7 @@
 #include "shell.h"
+/**
+ *print_prompt - print prompt of shell
+*/
 void print_prompt(void)
 {
 char *prompt = "cisfun $ ";

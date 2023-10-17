@@ -2,7 +2,7 @@
 
 /**
  * _getenv - gets environ
- * @environ: builtin 
+ * @environ: builtin
  * @name: icut pointer
  * @offset: icut pointer
  * Return: final or null
@@ -20,13 +20,13 @@ for (c = name; *c && *c != '='; ++c)
 ;
 
 n = c - name;
-for (p = environ; (cp = *p) != NULL; ++p) 
+for (p = environ; (cp = *p) != NULL; ++p)
 {
 for (c = name, i = n; i && *cp; i--)
 if (*cp++ != *c++)
 break;
 
-if (i == 0 && *cp++ == '=') 
+if (i == 0 && *cp++ == '=')
 {
 *offset = p - environ;
 return (cp);
