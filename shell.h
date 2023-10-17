@@ -25,6 +25,7 @@ struct list_s *next;
 } list_t;
 
 void intractive_mode(void);
+void print_env(void);
 int _strlen(char *str);
 int _strcmp(char *str, char *s);
 char *_strdup(char *c);
