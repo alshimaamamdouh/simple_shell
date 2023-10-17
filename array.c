@@ -18,7 +18,7 @@ size_t i;
 if (head == NULL)
 return (NULL);
 size_t len = list_len(head);
-char** array = (char**)malloc((len) * sizeof(char*));
+char** array = (char**)malloc((len + 1) * sizeof(char*));
 if (array == NULL)
 {
 perror("ERROR:");
@@ -27,8 +27,9 @@ exit(1);
 *size = len;
 for (i = 0; i < len; i++)
 {
-array[i] = strdup(temp->str);
+array[i] = _strdup(temp->str);
 temp =temp->next;
 }
+array[i] = NULL;
 return (array);
 }

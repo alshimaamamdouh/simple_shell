@@ -21,7 +21,8 @@ if (getline_result == -1)
 
   // Check if the input line is empty (just Enter)                                                                                           
     if (_strlen(lineptr) <= 1) {
-        return head;
+      free(lineptr);
+      return head;
     }
 //tokenize                                                                                                                                   
 token = strtok (lineptr , delim);

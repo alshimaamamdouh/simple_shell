@@ -75,8 +75,12 @@ if (child_pid == 0)
   //execute command like /bin/ls 
 val = execve(argv[0], argv, NULL);
 if (val == -1)
-perror("ERROR");
-exit(1); }
+  {perror("ERROR");
+free_list(head);
+free_array(argv, argc);
+//free(lineptr);
+ exit(0); }
+ }
 else
    //parent 
 wait(&status);
