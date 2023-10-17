@@ -35,10 +35,34 @@ else if(_strcmp(argv[0], "env"))
 char * env_info;
 int env_offset;
 extern char **environ;
-env_info = _getenv("SHLVL", environ, &env_offset);
-write(1, "SHLVL:", _strlen("SHLVL:"));
+env_info = _getenv("HOSTNAME", environ, &env_offset);
+write(1, "USER=", _strlen("USER="));
 write(1, env_info, _strlen(env_info));
 write(1, "\n", _strlen("\n"));
+env_info = _getenv("LANGUAGE", environ, &env_offset);
+write(1, "LANGUAGE=", _strlen("LANGUAGE="));
+write(1, env_info, _strlen(env_info));
+write(1, "\n", _strlen("\n"));
+env_info = _getenv("SHLVL", environ, &env_offset);
+write(1, "SHLVL=", _strlen("SHLVL="));
+write(1, env_info, _strlen(env_info));
+write(1, "\n", _strlen("\n"));
+env_info = _getenv("HOME", environ, &env_offset);
+write(1, "HOME=", _strlen("HOME="));
+write(1, env_info, _strlen(env_info));
+write(1, "\n", _strlen("\n"));
+env_info = _getenv("HOSTNAME", environ, &env_offset);
+write(1, "LOGNAME=", _strlen("LOGNAME="));
+write(1, env_info, _strlen(env_info));
+write(1, "\n", _strlen("\n"));
+env_info = _getenv("TERM", environ, &env_offset);
+write(1, "TERM=", _strlen("TERM="));
+write(1, env_info, _strlen(env_info));
+write(1, "\n", _strlen("\n"));
+env_info = _getenv("PATH", environ, &env_offset);
+write(1, "PATH=", _strlen("PATH="));
+write(1, env_info, _strlen(env_info));
+write(1, "\n", _strlen("\n"));	
 }
 else
 {
