@@ -22,8 +22,7 @@ if (_strcmp(argv[0], "exit"))
 free_list(head);
 free_array(argv, argc);
 free(lineptr);
-write(1, "exit\n", _strlen("exit\n"));
-exit(0); }
+exit(1); }
 else if (_strcmp(argv[0], "env"))
 print_env();
 else
