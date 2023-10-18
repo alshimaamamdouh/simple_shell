@@ -17,6 +17,4 @@ write(1, environ[i], _strlen(environ[i]));
 write(1, "\n", _strlen("\n"));
 }
 }
-else
-perror("./shell");
 }
