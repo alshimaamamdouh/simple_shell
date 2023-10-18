@@ -13,15 +13,8 @@ if (environ)
 {
 for (i = 0 ; environ[i] != 0; i++)
 {
-if (environ[i])
-{
 write(1, environ[i], _strlen(environ[i]));
 write(1, "\n", _strlen("\n"));
-}
-else
-{
-write(1, "\n", _strlen("\n"));
-}
 }
 }
 }
