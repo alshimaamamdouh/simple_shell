@@ -9,13 +9,14 @@
 */
 int main(int ac, char **av)
 {
+int is_intractive = isatty(STDIN_FILENO);
 if (ac == 2)
 {
 non_intractive_mode(av[1]);
 }
 else
 {
-intractive_mode();
+intractive_mode(is_intractive);
 }
 return (0);
 }

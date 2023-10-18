@@ -24,7 +24,7 @@ unsigned int len;
 struct list_s *next;
 } list_t;
 
-void intractive_mode(void);
+void intractive_mode(int is_intractive);
 int _strlen(char *str);
 int _strcmp(char *str, char *s);
 char *_strdup(char *c);

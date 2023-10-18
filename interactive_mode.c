@@ -1,5 +1,5 @@
 #include "shell.h"
-void intractive_mode(void)
+void intractive_mode(int is_intractive)
 {
 int status;
 list_t *head = NULL;
@@ -12,6 +12,7 @@ ssize_t flag;
 while (1)
 {
 /* print propmt */
+if (is_intractive)
 print_prompt();
 /*get command and tokenize*/
 head =  get_command(lineptr, head, &flag);
