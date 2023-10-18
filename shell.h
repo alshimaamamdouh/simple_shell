@@ -28,7 +28,7 @@ void print_env(void);
 int _strlen(char *str);
 int _strcmp(char *str, char *s);
 char *_strdup(char *c);
-void print_prompt(void);
+void print_prompt(int is_intractive);
 void free_list(list_t *head);
 char **linked_list_to_array(list_t *head, size_t *size);
 void free_array(char **array, size_t size);
