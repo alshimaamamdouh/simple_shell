@@ -23,6 +23,27 @@ char *str;
 unsigned int len;
 struct list_s *next;
 } list_t;
+
+/**
+ *struct built_in_command
+ *
+ *This structure is used to store information about built-in commands commonly
+ *found in a shell environment. It associates the command's name with its
+ *absolute file path on the system.
+ *
+ *@command: The name of the built-in command, e.g., "cp" for the copy command.
+ *@path: The absolute file path to the executable for the built-in command.
+*/
+typedef struct built_in_command
+{
+char *command;
+void (*func)(char **array, size_t size, char **env __attribute__((unused)));
+} built_in_command;
+
+void exit_command(char **arr, size_t s, char **env __attribute__((unused)));
+void env_command(char **arr, size_t s, char **env __attribute__((unused)));
+void (*ex_builtin(char *cmd))(char **, size_t, char **);
+int is_builtin(char *cmd);
 void intractive_mode(int is_intractive, char **environ);
 void print_env(char **environ);
 int _strlen(char *str);

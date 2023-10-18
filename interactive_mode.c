@@ -1,4 +1,10 @@
 #include "shell.h"
+/**
+ *intractive_mode - run shell in intractive mode
+ *
+ *@is_intractive: integer cheacks if it is interactive or not
+ *@environ: enviroment variables
+*/
 void intractive_mode(int is_intractive, char **environ)
 {
 int status, val;
@@ -8,6 +14,7 @@ pid_t child_pid;
 char **argv;
 size_t argc = 0;
 ssize_t flag;
+void (*cmd_func)(char **, size_t, char **);
 while (1)
 {
 print_prompt(is_intractive);
@@ -19,14 +26,10 @@ if (head != NULL)
 {
 argv = linked_list_to_array(head, &argc);
 free_list(head);
-if (_strcmp(argv[0], "exit"))
+if (is_builtin(argv[0]))
 {
-free_array(argv, argc);
-break; }
-else if (_strcmp(argv[0], "env") && !argv[1])
-{
-free_array(argv, argc);
-print_env(environ); }
+cmd_func = ex_builtin(argv[0]);
+cmd_func(argv, argc, environ); }
 else
 {
 child_pid = fork();
