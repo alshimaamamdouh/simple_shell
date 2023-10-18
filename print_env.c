@@ -9,6 +9,8 @@
 void print_env(char **environ)
 {
 int i;
+if (environ)
+{
 for (i = 0 ; environ[i] != 0; i++)
 {
 if (environ[i])
@@ -19,6 +21,7 @@ write(1, "\n", _strlen("\n"));
 else
 {
 write(1, "\n", _strlen("\n"));
+}
 }
 }
 }
