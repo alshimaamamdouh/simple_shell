@@ -18,6 +18,9 @@ non_intractive_mode(av[1]);
 else
 {
 intractive_mode(is_intractive, environ);
+if (is_intractive)
+write(1, "exit\n\n [Disconnected...]", _strlen("exit\n\n [Disconnected...]"));
+
 }
 return (0);
 }

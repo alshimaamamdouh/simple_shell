@@ -12,7 +12,6 @@ while (1)
 {
 print_prompt(is_intractive);
 head =  get_command(lineptr, head, &flag);
-
 if (flag == -1)
 break;
 free(lineptr);
@@ -23,7 +22,7 @@ free_list(head);
 if (_strcmp(argv[0], "exit"))
 {
 free_array(argv, argc);
-exit(0); }
+break; }
 else if (_strcmp(argv[0], "env") && !argv[1])
 {
 free_array(argv, argc);
@@ -43,6 +42,4 @@ free_array(argv, argc);
 exit(0); } }
 else
 wait(&status);
-free_array(argv, argc); } } }
-if (is_intractive)
-write(1, "exit\n", _strlen("exit\n")); }
+free_array(argv, argc); } } } }
