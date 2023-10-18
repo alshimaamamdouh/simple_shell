@@ -25,7 +25,6 @@ if (getline_result == -1)
 {
 free(lineptr);
 *flag = getline_result;
-write(1, "exit\n", _strlen("exit\n"));
 exit(0);
 }
 else
