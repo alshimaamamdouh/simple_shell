@@ -23,13 +23,8 @@ char *str;
 unsigned int len;
 struct list_s *next;
 } list_t;
-
-<<<<<<< HEAD
 void intractive_mode(int is_intractive);
-=======
-void intractive_mode(void);
 void print_env(void);
->>>>>>> 5214a9680335058903004a9da8c3523433dec879
 int _strlen(char *str);
 int _strcmp(char *str, char *s);
 char *_strdup(char *c);
