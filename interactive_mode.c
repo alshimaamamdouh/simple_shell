@@ -1,5 +1,5 @@
 #include "shell.h"
-void intractive_mode(int is_intractive)
+void intractive_mode(int is_intractive, char **environ)
 {
 int status, val;
 list_t *head = NULL;
@@ -24,7 +24,7 @@ free_array(argv, argc);
 free(lineptr);
 exit(1); }
 else if (_strcmp(argv[0], "env"))
-print_env();
+print_env(environ);
 else
 {
 child_pid = fork();

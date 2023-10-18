@@ -2,13 +2,13 @@
 
 /**
  *print_env - print env
+ *@environ: shell environ
  *
  */
 
-void print_env(void)
+void print_env(char **environ)
 {
 int i;
-extern char **environ;
 for (i = 0 ; environ[i] != 0; i++)
 {
 if (environ[i])
