@@ -49,7 +49,7 @@ if (child_pid == 0)
 val = execve(argv[0], argv, NULL);
 if (val == -1)
 {
-perror("ERROR");
+perror("./shell");
 free_list(head);
 free_array(argv, argc);
 exit(0); }
@@ -63,5 +63,6 @@ free_array(argv, argc);
 }
 }
 }
+if (is_intractive)
 write(1, "exit\n", _strlen("exit\n"));
 }
