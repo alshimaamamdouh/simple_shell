@@ -23,7 +23,7 @@ free_list(head);
 free_array(argv, argc);
 free(lineptr);
 exit(1); }
-else if (_strcmp(argv[0], "env"))
+else if (_strcmp(argv[0], "env") && !argv[1])
 print_env(environ);
 else
 {
