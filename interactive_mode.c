@@ -12,19 +12,22 @@ while (1)
 {
 print_prompt(is_intractive);
 head =  get_command(lineptr, head, &flag);
+
 if (flag == -1)
 break;
+free(lineptr);
 if (head != NULL)
 {
 argv = linked_list_to_array(head, &argc);
+free_list(head);
 if (_strcmp(argv[0], "exit"))
 {
-free_list(head);
 free_array(argv, argc);
-free(lineptr);
-exit(1); }
+exit(0); }
 else if (_strcmp(argv[0], "env"))
+{
 print_env();
+free_array(argv, argc); }
 else
 {
 child_pid = fork();
@@ -36,12 +39,10 @@ val = execve(argv[0], argv, NULL);
 if (val == -1)
 {
 perror("./shell");
-free_list(head);
 free_array(argv, argc);
 exit(0); } }
 else
 wait(&status);
-free_list(head);
 free_array(argv, argc); } } }
 if (is_intractive)
 write(1, "exit\n", _strlen("exit\n")); }
