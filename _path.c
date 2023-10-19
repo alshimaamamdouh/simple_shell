@@ -10,6 +10,10 @@ char *_path(char *cmd, char **environ)
 char *path, *temp, *path_token, *final;
 int cmd_length, path_length, f;
 struct stat stat_buff;
+if (stat(cmd, &stat_buff) == 0)
+{
+return (cmd);
+}
 path = _getenv("PATH", environ, &f);
 if (path != NULL)
 {
@@ -34,10 +38,6 @@ else
 free(final);
 path_token = strtok(NULL, ":");
 }
-}
-if (stat(cmd, &stat_buff) == 0)
-{
-return (cmd);
 }
 return (NULL);
 }
