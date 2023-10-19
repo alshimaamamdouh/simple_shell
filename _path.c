@@ -11,12 +11,12 @@ char *path, *temp, *path_token, *final;
 int cmd_length, path_length, f;
 struct stat stat_buff;
 path = _getenv("PATH", environ, &f);
-if (path)
+if (path != NULL)
 {
 temp = _strdup(path);
 cmd_length = _strlen(cmd);
 path_token = strtok(temp, ":");
-while (path_token != NULL)
+while (path_token)
 {
 path_length = _strlen(path_token);
 final = malloc(cmd_length + path_length + 2);
