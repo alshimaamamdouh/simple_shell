@@ -8,9 +8,8 @@
 void intractive_mode(int is_intractive, char **environ)
 {
 int status, val;
-char *cmd;
 list_t *head = NULL;
-char *lineptr = NULL;
+char *lineptr = NULL, *cmd;
 pid_t child_pid;
 char **argv;
 size_t argc = 0;
