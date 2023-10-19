@@ -8,6 +8,7 @@
 void intractive_mode(int is_intractive, char **environ)
 {
 int status, val;
+char *cmd;
 list_t *head = NULL;
 char *lineptr = NULL;
 pid_t child_pid;
@@ -37,7 +38,8 @@ if (child_pid == -1)
 exit(1);
 if (child_pid == 0)
 {
-val = execve(argv[0], argv, NULL);
+cmd = _path(argv[0], environ);
+val = execve(cmd, argv, NULL);
 if (val == -1)
 {
 perror("./shell");
