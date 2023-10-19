@@ -2,7 +2,7 @@
 /**
  * *_path - add path to command
  * @cmd: pointer to command
- *
+ * @environ: shell environ
  * Return: command
  */
 char *_path(char *cmd, char **environ)
